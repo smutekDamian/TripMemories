@@ -1,10 +1,19 @@
 agm-map {
-  height: 600px;
-  width: 600px;
+  height: 700px;
+  width: 100%;
+  position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  margin: auto;
+  padding: 0 20% 0 20%;
+}
+:host { 
+  grid-area: map;
+  position: relative;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 section {
-  border-radius: 2px;
-  display: inline-block;
-  margin: 1rem;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  height: 100vh;
 }
