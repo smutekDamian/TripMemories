@@ -1,6 +1,5 @@
 <section>
-  <agm-map [latitude]="lat" [longitude]="lng" [styles]="mapStyles"> 
-    <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]=""></agm-marker>
+  <agm-map [latitude]="photos[0].lattitude" [longitude]="photos[0].longitude" [styles]="mapStyles">
+    <agm-marker *ngFor="let photo of photos" [latitude]="photo.lattitude" [longitude]="photo.longitude" ></agm-marker>
   </agm-map>
 </section>
-
