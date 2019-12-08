@@ -1,0 +1,114 @@
+{
+  "photos": [
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/1.jpg"
+    },
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/2.jpg"
+    },
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/3.jpg"
+    },
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/4.jpg"
+    },
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/5.jpg"
+    },
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/6.jpg"
+    },
+    {
+      "lattitude" : 52.525500,
+      "longitude" : 13.405480,
+      "src" : "/assets/galeries/berlin/7.jpg"
+    },
+    {
+      "lattitude" : 50.442735,
+      "longitude" : 16.245243,
+      "src" : "/assets/galeries/kudowa/1.jpg"
+    },
+    {
+      "lattitude" : 50.442735,
+      "longitude" : 16.245243,
+      "src" : "/assets/galeries/kudowa/2.jpg"
+    },
+    {
+      "lattitude" : 50.442735,
+      "longitude" : 16.245243,
+      "src" : "/assets/galeries/kudowa/3.jpg"
+    },
+    {
+      "lattitude" : 59.339025,
+      "longitude" : 18.068565,
+      "src" : "/assets/galeries/stokholm/1.jpg"
+    },
+    {
+      "lattitude" : 59.339025,
+      "longitude" : 18.068565,
+      "src" : "/assets/galeries/stokholm/2.jpg"
+    },
+    {
+      "lattitude" : 59.339025,
+      "longitude" : 18.068565,
+      "src" : "/assets/galeries/stokholm/3.jpg"
+    },
+    {
+      "lattitude" : 59.339025,
+      "longitude" : 18.068565,
+      "src" : "/assets/galeries/stokholm/4.jpg"
+    },
+    {
+      "lattitude" : 59.339025,
+      "longitude" : 18.068565,
+      "src" : "/assets/galeries/stokholm/5.jpg"
+    },
+    {
+      "lattitude" : 45.068618,
+      "longitude" : 7.689681,
+      "src" : "/assets/galeries/torino/1.jpg"
+    },
+    {
+      "lattitude" : 45.068618,
+      "longitude" : 7.689681,
+      "src" : "/assets/galeries/torino/2.jpg"
+    },
+    {
+      "lattitude" : 45.068618,
+      "longitude" : 7.689681,
+      "src" : "/assets/galeries/torino/3.jpg"
+    },
+    {
+      "lattitude" : 45.068618,
+      "longitude" : 7.689681,
+      "src" : "/assets/galeries/torino/4.jpg"
+    },
+    {
+      "lattitude" : 45.068618,
+      "longitude" : 7.689681,
+      "src" : "/assets/galeries/torino/5.jpg"
+    },
+    {
+      "lattitude" : 45.068618,
+      "longitude" : 7.689681,
+      "src" : "/assets/galeries/torino/6.jpg"
+    },
+    {
+      "lattitude" : 45.440121,
+      "longitude" : 12.319251,
+      "src" : "/assets/galeries/venice/1.jpg"
+    }
+  ]
+}

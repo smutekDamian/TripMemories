@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Photo } from './photo';
+import * as photosConfig from '../assets/photos_config/photos-config.json';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,6 @@ export class PhotosService {
   constructor() { }
 
   getPhotos(): Photo[] {
-    return [
-      new Photo(50.025962, 19.917129),
-      new Photo(51.513383, 20.247464)
-    ]  
+    return photosConfig.photos;
   }
 }
