@@ -8,6 +8,7 @@ agm-map {
 	right: 0;
   margin: auto;
   padding: 0 20% 0 20%;
+
 }
 :host { 
   grid-area: map;
@@ -16,4 +17,23 @@ agm-map {
 }
 section {
   height: 100vh;
+}
+
+
+@media screen and (max-width: 1420px) {
+  agm-map {
+    padding: 0 10% 0 10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  agm-map {
+    padding: 0 5% 0 5%;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  agm-map {
+    padding: 0 5% 0 5% ;
+  }
 }
