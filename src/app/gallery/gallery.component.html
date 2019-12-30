@@ -1,4 +1,5 @@
-<div>
-  <p>gallery works!</p>
-</div>
+<section>
+  <figure *ngFor="let photo of photos" [style.background]="'url(' + photo.thumbnailSrc + ')'" [style.backgroundSize]="'cover'" [style.backgroundPosition]="'center'">
+  </figure>
+</section>
 

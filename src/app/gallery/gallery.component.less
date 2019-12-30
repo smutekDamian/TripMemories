@@ -1,4 +1,15 @@
-div {
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 6px;
+  margin: auto;
+  grid-auto-rows: 300px;
+  grid-auto-flow: row dense;
   min-height: 100vh;
-  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  padding: 10%;
+}
+section figure:nth-child(5n){
+  grid-column: span 2;
+  grid-row: span 2;
 }
