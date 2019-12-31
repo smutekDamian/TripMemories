@@ -1,5 +1,5 @@
 <section>
-  <figure *ngFor="let photo of photos" [style.background]="'url(' + photo.thumbnailSrc + ')'" [style.backgroundSize]="'cover'" [style.backgroundPosition]="'center'">
-  </figure>
+    <figure *ngFor="let photo of photos" [routerLink]="['/image', photo.src]" [lazyLoad]="photo.thumbnailSrc">
+    </figure>
 </section>
 
