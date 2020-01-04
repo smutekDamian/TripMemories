@@ -3,6 +3,7 @@ import { Photo } from './photo';
 import { Marker } from './marker';
 import { PhotosService } from './photos.service';
 import { MarkerUtils } from './utils/marker.utils';
+import { Category } from './category';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,7 @@ export class AppComponent implements OnInit {
   }
   
   private getMarkers(): void{
-    let duplicatedMarkers = this.photos.map(photo => new Marker(photo.lattitude, photo.longitude, photo.src));
+    let duplicatedMarkers = this.photos.map(photo => this.createMarker(photo) );
     let markers = [];
     for(let i = 0; i < duplicatedMarkers.length; i++){
       if (this.contains(markers, duplicatedMarkers[i]) == false) {
@@ -34,6 +35,25 @@ export class AppComponent implements OnInit {
       }
     }
     this.markers = markers;
+  }
+private createMarker(photo : Photo) : Marker {
+  var marker = new Marker(photo.lattitude, photo.longitude, photo.src);
+  var mockCategory : Category;
+  var randomInteger = Math.floor(Math.random() * 10);
+  if (randomInteger % 4 == 0) {
+    mockCategory = new Category("red", "Company Trips");
+  }
+  else if(randomInteger % 4 == 1){
+    mockCategory = new Category("blue", "Family Trips");
+  }
+  else if(randomInteger % 4 == 2){
+    mockCategory = new Category("green", "Green Trips");
+  }
+  else if(randomInteger % 4 == 3){
+    mockCategory = new Category("yellow", "Yellow Trips");
+  }
+  marker.category = mockCategory;
+  return marker;
 }
 
 private contains(array: Marker[], item: Marker) : boolean{

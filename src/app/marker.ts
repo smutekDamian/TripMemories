@@ -1,5 +1,7 @@
+import { Category } from './category';
+
 export class Marker {
-  constructor(lattitude, longitude, thumbnailSrc) {
+  constructor(lattitude: number, longitude: number, thumbnailSrc: string) {
     this.lattitude = lattitude;
     this.longitude = longitude;
     this.thumbnailSrc = thumbnailSrc;
@@ -7,5 +9,5 @@ export class Marker {
   lattitude: number;
   longitude: number;
   thumbnailSrc: string;
-  thumbnailBase64: string;
+  category: Category
 }
