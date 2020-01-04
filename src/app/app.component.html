@@ -1,9 +1,9 @@
 <app-header [buttonScrollElementId]="'map-container'"></app-header>
 <main>
   <section id="map-container">
-    <app-map [markers] = "markers"></app-map>
+    <app-map [markers] = "markers" (albumSelected)="onAlbumSelected($event)"></app-map>
   </section>
-  <app-gallery [photos] = "getCurrentAlbum().photos"></app-gallery>
+  <app-gallery [photos] = "getPhotos()"></app-gallery>
 </main>
 <app-footer></app-footer>
 

@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { Marker } from '../marker';
 import { MapConfigService } from '../map-config.service'
 import { Category } from '../category';
+import { AgmMarker } from '@agm/core';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -12,6 +13,7 @@ export class MapComponent implements OnInit {
   @Input() markers: Marker[];
   @ViewChild('map', {static: false}) mapContainer : ElementRef;
   @ViewChild('filters', {static: false}) filters : ElementRef;
+  @Output() albumSelected = new EventEmitter<number>(); 
   mapStyles : any;
   categories : Category[] = [];
   selectedCategories : Category[] = [];
@@ -47,6 +49,10 @@ export class MapComponent implements OnInit {
       this.selectedCategories.push(category);
       selectedCategoryEl.classList.add("selected");
     }
+  }
+
+  showAlbum(marker: AgmMarker, albumId: number) {
+    this.albumSelected.emit(albumId);
   }
 
   private getMapStyles(): void {

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   title = 'trip-memories';
   markers: Marker[];
   albums: Album[];
+  currentAlbumId: number;
 
   constructor(private photosService: PhotosService, private markerUtils : MarkerUtils) { }
   
@@ -25,8 +26,13 @@ export class AppComponent implements OnInit {
     this.albums = this.photosService.getAlbums();
   }
 
-  getCurrentAlbum() : Album{
-    return this.albums.find(album => album.albumId == 2);
+  getPhotos() : Photo[]{
+    var currentAlbum = this.albums.find(album => album.albumId == this.currentAlbumId);
+    return currentAlbum != null ? currentAlbum.photos : [];
+  }
+
+  onAlbumSelected(albumId: number) {
+    this.currentAlbumId = albumId;
   }
   
   private getMarkers(): void{
@@ -34,7 +40,7 @@ export class AppComponent implements OnInit {
 
     this.albums.forEach(album => {
       var markerPhoto = album.photos[0];
-      var marker = new Marker(album.lattitude, album.longitude, markerPhoto.thumbnailSrc, album.category);
+      var marker = new Marker(album.lattitude, album.longitude, markerPhoto.thumbnailSrc, album.category, album.albumId);
       this.markerUtils.fillWithThumbnail(marker);
       markers.push(marker);
     });

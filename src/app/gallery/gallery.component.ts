@@ -14,4 +14,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
   }
 
+  showGallery() : boolean {
+    return this.photos.length != 0;
+  }
 }

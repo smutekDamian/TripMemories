@@ -1,4 +1,4 @@
-<section>
+<section [ngClass]="showGallery() ? '' : 'hidden'">
     <figure *ngFor="let photo of photos" [routerLink]="['/image', photo.src]" [lazyLoad]="photo.thumbnailSrc">
     </figure>
 </section>
