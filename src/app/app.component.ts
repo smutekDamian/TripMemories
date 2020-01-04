@@ -3,7 +3,7 @@ import { Photo } from './photo';
 import { Marker } from './marker';
 import { PhotosService } from './photos.service';
 import { MarkerUtils } from './utils/marker.utils';
-import { Category } from './category';
+import { Album } from './album';
 
 @Component({
   selector: 'app-root',
@@ -13,55 +13,32 @@ import { Category } from './category';
 export class AppComponent implements OnInit {
   title = 'trip-memories';
   markers: Marker[];
-  photos: Photo[];
+  albums: Album[];
 
   constructor(private photosService: PhotosService, private markerUtils : MarkerUtils) { }
   
   ngOnInit() {
-    this.getPhotos();
+    this.getAlbums();
     this.getMarkers();
   }
-  private getPhotos() {
-    this.photos = this.photosService.getPhotos();
+  private getAlbums() {
+    this.albums = this.photosService.getAlbums();
+  }
+
+  getCurrentAlbum() : Album{
+    return this.albums.find(album => album.albumId == 2);
   }
   
   private getMarkers(): void{
-    let duplicatedMarkers = this.photos.map(photo => this.createMarker(photo) );
     let markers = [];
-    for(let i = 0; i < duplicatedMarkers.length; i++){
-      if (this.contains(markers, duplicatedMarkers[i]) == false) {
-        markers.push(duplicatedMarkers[i]);
-        this.markerUtils.fillWithThumbnail(duplicatedMarkers[i]);
-      }
-    }
+
+    this.albums.forEach(album => {
+      var markerPhoto = album.photos[0];
+      var marker = new Marker(album.lattitude, album.longitude, markerPhoto.thumbnailSrc, album.category);
+      this.markerUtils.fillWithThumbnail(marker);
+      markers.push(marker);
+    });
+
     this.markers = markers;
   }
-private createMarker(photo : Photo) : Marker {
-  var marker = new Marker(photo.lattitude, photo.longitude, photo.src);
-  var mockCategory : Category;
-  var randomInteger = Math.floor(Math.random() * 10);
-  if (randomInteger % 4 == 0) {
-    mockCategory = new Category("red", "Company Trips");
-  }
-  else if(randomInteger % 4 == 1){
-    mockCategory = new Category("blue", "Family Trips");
-  }
-  else if(randomInteger % 4 == 2){
-    mockCategory = new Category("green", "Green Trips");
-  }
-  else if(randomInteger % 4 == 3){
-    mockCategory = new Category("yellow", "Yellow Trips");
-  }
-  marker.category = mockCategory;
-  return marker;
-}
-
-private contains(array: Marker[], item: Marker) : boolean{
-  for(let i = 0; i < array.length; i++){
-    if (array[i].longitude === item.longitude && array[i].lattitude === item.lattitude) {
-      return true;
-    }
-  }
-  return false;
-}
 }

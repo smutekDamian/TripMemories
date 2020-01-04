@@ -36,8 +36,8 @@ export class MarkerUtils {
       ctx.closePath();
       ctx.clip();
       ctx.drawImage(image, 0, 0, thumbnailWidth, thumbnailHeight);
-      ctx.lineWidth = 5;
-      ctx.strokeStyle = "red";
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = marker.category.code;
       ctx.stroke();  
       ctx.beginPath();
       ctx.arc(0, 0, circleRadius, 0, Math.PI * 2, true);
