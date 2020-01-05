@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ScrollUtils } from '../utils/scroll-utils';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,6 @@ export class HeaderComponent implements OnInit {
   }
 
   buttonClickHandler(): void {
-    let element = document.getElementById(this.buttonScrollElementId);
-    element.scrollIntoView({behavior:"smooth"});
+    ScrollUtils.scrollTo(this.buttonScrollElementId);
   }
 }

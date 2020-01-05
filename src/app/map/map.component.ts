@@ -3,6 +3,7 @@ import { Marker } from '../marker';
 import { MapConfigService } from '../map-config.service'
 import { Category } from '../category';
 import { AgmMarker } from '@agm/core';
+import { ScrollUtils } from '../utils/scroll-utils';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -11,6 +12,7 @@ import { AgmMarker } from '@agm/core';
 
 export class MapComponent implements OnInit {
   @Input() markers: Marker[];
+  @Input() galleryComponentId: string;
   @ViewChild('map', {static: false}) mapContainer : ElementRef;
   @ViewChild('filters', {static: false}) filters : ElementRef;
   @Output() albumSelected = new EventEmitter<number>(); 
@@ -53,6 +55,9 @@ export class MapComponent implements OnInit {
 
   showAlbum(marker: AgmMarker, albumId: number) {
     this.albumSelected.emit(albumId);
+    setTimeout(()=> {
+      ScrollUtils.scrollTo(this.galleryComponentId);
+    }, 100)
   }
 
   private getMapStyles(): void {
