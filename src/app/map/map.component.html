@@ -11,7 +11,9 @@
     <button (click)="showFilters()">Filters</button>
     <div class="map_container">
       <agm-map [latitude]="markers[0].lattitude" [longitude]="markers[0].longitude" [styles]="mapStyles" [zoom]=5>
-        <agm-marker *ngFor="let marker of markers" (markerClick)="showAlbum($event, marker.albumId)" [latitude]="marker.lattitude" [longitude]="marker.longitude" [iconUrl]="marker.thumbnailSrc"></agm-marker>
+        <ng-container *ngFor="let marker of markers">
+          <agm-marker *ngIf="marker.isActive" (markerClick)="showAlbum($event, marker.albumId)" [latitude]="marker.lattitude" [longitude]="marker.longitude" [iconUrl]="marker.thumbnailSrc"></agm-marker>
+        </ng-container>
       </agm-map>
     </div>
   </figure>

@@ -13,4 +13,5 @@ export class Marker {
   longitude: number;
   thumbnailSrc: string;
   category: Category
+  isActive: boolean = true;
 }

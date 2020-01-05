@@ -51,6 +51,19 @@ export class MapComponent implements OnInit {
       this.selectedCategories.push(category);
       selectedCategoryEl.classList.add("selected");
     }
+    this.filterMarkers();
+  }
+
+  private filterMarkers() : void {
+    this.markers.map(marker => marker.isActive = true)
+    if (this.selectedCategories.length == 0) {
+      return;
+    }
+    this.markers.forEach(marker => {
+      if(!this.selectedCategories.some(category => category.code == marker.category.code)) {
+        marker.isActive = false;
+      }
+    }); 
   }
 
   showAlbum(marker: AgmMarker, albumId: number) {
