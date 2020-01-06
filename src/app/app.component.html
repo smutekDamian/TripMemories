@@ -3,7 +3,7 @@
   <section id="map-container">
     <app-map [markers] = "markers" [galleryComponentId]="'gallery'" (albumSelected)="onAlbumSelected($event)"></app-map>
   </section>
-  <app-gallery id="gallery" [mapContainerId]="'map-container'" [photos] = "getPhotos()"></app-gallery>
+  <app-gallery id="gallery" [mapContainerId]="'map-container'" [photos] = "currentAlbum.photos" [title] = "currentAlbum.title"></app-gallery>
 </main>
 <app-footer></app-footer>
 

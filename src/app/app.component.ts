@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Photo } from './photo';
 import { Marker } from './marker';
 import { PhotosService } from './photos.service';
 import { Album } from './album';
@@ -13,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'trip-memories';
   markers: Marker[];
   albums: Album[];
-  currentAlbumId: number;
+  currentAlbum : Album = new Album();
 
   constructor(private photosService: PhotosService) { }
   
@@ -25,13 +24,9 @@ export class AppComponent implements OnInit {
     this.albums = this.photosService.getAlbums();
   }
 
-  getPhotos() : Photo[]{
-    var currentAlbum = this.albums.find(album => album.albumId == this.currentAlbumId);
-    return currentAlbum != null ? currentAlbum.photos : [];
-  }
-
   onAlbumSelected(albumId: number) {
-    this.currentAlbumId = albumId;
+    let currentAlbum = this.albums.find(album => album.albumId == albumId);
+    this.currentAlbum = currentAlbum == null ? new Album() : currentAlbum;
   }
   
   private getMarkers(): void{

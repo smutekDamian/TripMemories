@@ -1,6 +1,10 @@
-<section #galleryContainer [ngClass]="showGallery() ? '' : 'hidden'">
-    <button #goToMap (click)="goToMapBtnHandler()"></button>
-    <figure *ngFor="let photo of photos" [routerLink]="['/image', photo.src]" [lazyLoad]="photo.thumbnailSrc">
-    </figure>
-</section>
+<article #galleryContainer [ngClass]="showGallery() ? '' : 'hidden'">
+    <h1>{{title}}</h1>
+    <section>
+        <button #goToMap (click)="goToMapBtnHandler()"></button>
+        <figure *ngFor="let photo of photos" [routerLink]="['/image', photo.src]" [lazyLoad]="photo.thumbnailSrc">
+        </figure>
+    </section>
+</article>
+
 

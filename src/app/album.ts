@@ -2,11 +2,12 @@ import { Category } from './category';
 import { Photo } from './photo';
 
 export class Album {
-  constructor(lattitude, longitude){
-    this.lattitude = lattitude;
-    this.longitude = longitude;
+  constructor(){
+    this.photos = [];
   }
+
   albumId : number;
+  title : string;
   lattitude: number;
   longitude: number;
   category: Category;

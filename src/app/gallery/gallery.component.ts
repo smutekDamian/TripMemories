@@ -9,6 +9,7 @@ import { ScrollUtils } from '../utils/scroll-utils';
 })
 export class GalleryComponent implements OnInit {
   @Input() photos : Photo[];
+  @Input() title : string;
   @Input() mapContainerId : string;
   @ViewChild('goToMap', {static: false}) goToMapBtn : ElementRef;
   @ViewChild('galleryContainer', {static: false}) galleryContainer : ElementRef;
