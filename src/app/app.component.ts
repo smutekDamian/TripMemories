@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Photo } from './photo';
 import { Marker } from './marker';
 import { PhotosService } from './photos.service';
-import { MarkerUtils } from './utils/marker.utils';
 import { Album } from './album';
 
 @Component({
@@ -16,7 +15,7 @@ export class AppComponent implements OnInit {
   albums: Album[];
   currentAlbumId: number;
 
-  constructor(private photosService: PhotosService, private markerUtils : MarkerUtils) { }
+  constructor(private photosService: PhotosService) { }
   
   ngOnInit() {
     this.getAlbums();
@@ -41,7 +40,6 @@ export class AppComponent implements OnInit {
     this.albums.forEach(album => {
       var markerPhoto = album.photos[0];
       var marker = new Marker(album.lattitude, album.longitude, markerPhoto.thumbnailSrc, album.category, album.albumId);
-      this.markerUtils.fillWithThumbnail(marker);
       markers.push(marker);
     });
 

@@ -30,6 +30,13 @@ export class MapComponent implements OnInit {
       }
     })
   }
+  mapReady(){
+    setTimeout(() => {
+      this.markers.forEach(marker => {
+        marker.isActive = true;
+      })
+    },500)
+  }
 
   showFilters() : void {
     this.filters.nativeElement.classList.add("expanded");

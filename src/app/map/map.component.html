@@ -1,5 +1,5 @@
 <section>
-  <aside #filters>
+  <aside #filters class="filters">
     <span class="close" (click)="closeFilters()"></span>
     <div *ngFor="let category of categories" >
       <span [id]="category.code" (click)="selectCategory(category)" class="category_item">{{category.description}}
@@ -10,9 +10,11 @@
   <figure #map>
     <button (click)="showFilters()">Filters</button>
     <div class="map_container">
-      <agm-map [latitude]="markers[0].lattitude" [longitude]="markers[0].longitude" [styles]="mapStyles" [zoom]=5>
+      <agm-map [latitude]="markers[0].lattitude" [longitude]="markers[0].longitude" [styles]="mapStyles" [zoom]=5 (mapReady)="mapReady()">
         <ng-container *ngFor="let marker of markers">
-          <agm-marker *ngIf="marker.isActive" (markerClick)="showAlbum($event, marker.albumId)" [latitude]="marker.lattitude" [longitude]="marker.longitude" [iconUrl]="marker.thumbnailSrc"></agm-marker>
+          <agm-overlay (markerClick)="showAlbum($event, marker.albumId)" [latitude]="marker.lattitude" [longitude]="marker.longitude">
+            <img class="circle marker" [ngClass]="marker.isActive ? 'active' : ''" [style.border-color]="marker.category.code" [src]="marker.thumbnailSrc">
+          </agm-overlay>
         </ng-container>
       </agm-map>
     </div>

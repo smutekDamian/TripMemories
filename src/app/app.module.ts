@@ -11,6 +11,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImageModalComponent } from './image-modal/image-modal.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { AgmOverlays } from "agm-overlays"
 
 const appRoutes : Routes = [
   {path: 'image/:src', component: ImageModalComponent}
@@ -32,7 +33,8 @@ const appRoutes : Routes = [
       apiKey: 'AIzaSyAAB5Jgh7NRxylVsxkb00nO5JPPRt0En7s'
     }),
     RouterModule.forRoot(appRoutes),
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    AgmOverlays
   ],
   providers: [],
   bootstrap: [AppComponent]

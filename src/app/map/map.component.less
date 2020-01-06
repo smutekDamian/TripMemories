@@ -98,16 +98,31 @@ button {
   margin-left: 250px;
 }
 
+.filters{
+  .circle{
+    position: absolute;
+    top: 25%;
+    right: 25%;
+  }
+}
+
 .circle {
-  position: absolute;
-  top: 25%;
-  right: 25%;
   height: 25px;
   width: 25px;
   border-radius: 50%;
   border: 3px solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.5s;
+  &.marker{
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+    border-width: 25px;
+    &.active{
+      opacity: 1;
+      border-width: 3px;
+    }
+  }
 }
 
 @media screen and (max-width: 1420px) {
