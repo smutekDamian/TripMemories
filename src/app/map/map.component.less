@@ -42,7 +42,7 @@ aside {
    height: 60px;
   }
 }
-.category_item{
+.category_item, mat-form-field{
   position: relative;
   width: 300px;
   padding: 8px 8px 8px 32px;
@@ -122,6 +122,37 @@ button {
   }
 }
 
+input matInput{
+  color: #818181;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #818181 !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #818181 !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: #818181 !important;;
+}
+
+::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: #818181 !important;
+ }
+::ng-deep .mat-form-field {
+  width: 90% !important;
+ }
+
+mat-datepicker-toggle {
+  color: #818181 !important;
+}
+
 @media screen and (max-width: 1420px) {
   agm-map {
     padding: 0 10% 0 10%;
@@ -141,6 +172,15 @@ button {
   .expanded {
     width: 100%;
   }
+  ::ng-deep .mat-form-field {
+    width: 30% !important;
+   }
+}
+
+@media screen and (max-width: 500px) {
+  ::ng-deep .mat-form-field {
+    width: 45% !important;
+   }
 }
 
 @media screen and (min-width: 1750px) {
@@ -153,4 +193,7 @@ button {
   .filters_expanded {
     margin-left: 550px;
   }
+  ::ng-deep .mat-form-field {
+    width: 45% !important;
+   }
 }

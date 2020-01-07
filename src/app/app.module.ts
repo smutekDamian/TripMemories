@@ -11,7 +11,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ImageModalComponent } from './image-modal/image-modal.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { AgmOverlays } from "agm-overlays"
+import { AgmOverlays } from "agm-overlays";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
 
 const appRoutes : Routes = [
   {path: 'image/:src', component: ImageModalComponent}
@@ -34,7 +39,12 @@ const appRoutes : Routes = [
     }),
     RouterModule.forRoot(appRoutes),
     LazyLoadImageModule,
-    AgmOverlays
+    AgmOverlays,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

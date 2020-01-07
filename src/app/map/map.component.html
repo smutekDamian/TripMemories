@@ -6,6 +6,18 @@
         <figure [style.border-color]="category.code" class="circle"></figure>
       </span>
     </div>
+    <div>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerFrom" placeholder="Date from">
+        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFrom></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerTo" placeholder="Date to">
+        <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+        <mat-datepicker #pickerTo></mat-datepicker>
+      </mat-form-field>
+    </div>
   </aside>
   <figure #map>
     <button (click)="showFilters()">Filters</button>
